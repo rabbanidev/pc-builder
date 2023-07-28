@@ -1,10 +1,8 @@
+import { categories } from "@/data/categories";
 import Menu from "@/icons/Menu";
 import Link from "next/link";
-import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const { categoriesList } = useSelector((state) => state.categories);
-
   return (
     <div className="max-w-7xl mx-auto">
       <div className="navbar shadow px-5 text-black lg:px-10">
@@ -20,7 +18,7 @@ const Navbar = () => {
               <li>
                 <a>Categories</a>
                 <ul className="p-2 w-48 z-50">
-                  {categoriesList.map((category) => (
+                  {categories.map((category) => (
                     <li
                       key={category.title}
                       className="rounded border-b last:border-b-0"
@@ -48,7 +46,7 @@ const Navbar = () => {
               <details>
                 <summary className="hover:rounded">All Categories</summary>
                 <ul className="p-2 w-48 z-50 rounded shadow">
-                  {categoriesList.map((category) => (
+                  {categories.map((category) => (
                     <li
                       key={category.title}
                       className="rounded border-b last:border-b-0"

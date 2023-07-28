@@ -1,34 +1,4 @@
 {
-  "categories": [
-    {
-      "title": "CPU - Processor",
-      "image": "https://images.pexels.com/photos/1432680/pexels-photo-1432680.jpeg"
-    },
-    {
-      "title": "Motherboard",
-      "image": "https://images.pexels.com/photos/163140/technology-computer-motherboard-chips-163140.jpeg"
-    },
-    {
-      "title": "RAM",
-      "image": "https://images.pexels.com/photos/2588757/pexels-photo-2588757.jpeg"
-    },
-    {
-      "title": "Power Supply Unit",
-      "image": "https://images.pexels.com/photos/5408008/pexels-photo-5408008.jpeg"
-    },
-    {
-      "title": "Storage Device",
-      "image": "https://images.pexels.com/photos/3631991/pexels-photo-3631991.jpeg"
-    },
-    {
-      "title": "Monitor",
-      "image": "https://images.pexels.com/photos/159394/pc-computer-android-android-pc-159394.jpeg"
-    },
-    {
-      "title": "Others",
-      "image": "https://ov11-engine.flamingtext.com/netfu/tmp28002/coollogo_com-205321412.png"
-    }
-  ],
   "products": [
     {
       "id": "1",
@@ -55,7 +25,8 @@
           "id": 1,
           "username": "user456",
           "rating": 5,
-          "comment": "Excellent performance!"
+          "comment": "Excellent performance!",
+          "userProfile": "https://images.pexels.com/photos/5325105/pexels-photo-5325105.jpeg"
         }
       ]
     },
@@ -84,7 +55,8 @@
           "id": 1,
           "username": "user789",
           "rating": 4,
-          "comment": "Solid build quality."
+          "comment": "Solid build quality.",
+          "userProfile": "https://images.pexels.com/photos/5325105/pexels-photo-5325105.jpeg"
         }
       ]
     },
@@ -113,7 +85,8 @@
           "id": 1,
           "username": "user234",
           "rating": 5,
-          "comment": "Fast and reliable RAM."
+          "comment": "Fast and reliable RAM.",
+          "userProfile": "https://images.pexels.com/photos/5325105/pexels-photo-5325105.jpeg"
         }
       ]
     },
@@ -142,7 +115,8 @@
           "id": 1,
           "username": "user567",
           "rating": 4,
-          "comment": "Good value for money."
+          "comment": "Good value for money.",
+          "userProfile": "https://images.pexels.com/photos/5325105/pexels-photo-5325105.jpeg"
         }
       ]
     },
@@ -171,13 +145,14 @@
           "id": 1,
           "username": "user890",
           "rating": 5,
-          "comment": "Blazing fast SSD!"
+          "comment": "Blazing fast SSD!",
+          "userProfile": "https://images.pexels.com/photos/5325105/pexels-photo-5325105.jpeg"
         }
       ]
     },
     {
       "id": "6",
-      "name": "Monitor XYZ",
+      "name": "Monitor HP 22",
       "image": "https://images.pexels.com/photos/159394/pc-computer-android-android-pc-159394.jpeg",
       "category": "Monitor",
       "price": 20000,
@@ -200,13 +175,15 @@
           "id": 1,
           "username": "user123",
           "rating": 4,
-          "comment": "Great color reproduction!"
+          "comment": "Great color reproduction!",
+          "userProfile": "https://images.pexels.com/photos/5325105/pexels-photo-5325105.jpeg"
         },
         {
           "id": 2,
           "username": "user456",
           "rating": 5,
-          "comment": "Excellent gaming monitor!"
+          "comment": "Excellent gaming monitor!",
+          "userProfile": "https://images.pexels.com/photos/5325105/pexels-photo-5325105.jpeg"
         }
       ]
     }

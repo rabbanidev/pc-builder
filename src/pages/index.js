@@ -1,16 +1,9 @@
-import { useDispatch } from "react-redux";
 import CategoryCard from "@/components/UI/CategoryCard";
 import ProductCard from "@/components/UI/ProductCard";
 import RootLayout from "@/components/layouts/RootLayout";
-import { setCategoriesList } from "@/rtk/features/categories/categoriesSlice";
+import { categories } from "@/data/categories";
 
-const Home = ({ featuredProducts, categories }) => {
-  const dispatch = useDispatch();
-
-  if (categories?.length > 0) {
-    dispatch(setCategoriesList(categories));
-  }
-
+const Home = ({ featuredProducts }) => {
   return (
     <section className="max-w-7xl mx-auto py-10 px-5 lg:px-10">
       <div className="featured-products">
@@ -45,13 +38,9 @@ export const getStaticProps = async () => {
   const res = await fetch("http://localhost:5000/products");
   const products = await res.json();
 
-  const categoriesRes = await fetch("http://localhost:5000/categories");
-  const categories = await categoriesRes.json();
-
   return {
     props: {
       featuredProducts: products,
-      categories: categories,
     },
     revalidate: 20,
   };
