@@ -1,6 +1,6 @@
 export const categories = [
   {
-    title: "CPU / Processor",
+    title: "CPU - Processor",
     image: "https://images.pexels.com/photos/1432680/pexels-photo-1432680.jpeg",
   },
   {

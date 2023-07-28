@@ -10,7 +10,7 @@ const CategoryCard = ({ category }) => {
           <Image
             src={category.image}
             alt={category.image}
-            width={300}
+            width={200}
             height={200}
             layout="responsive"
             className="object-cover"

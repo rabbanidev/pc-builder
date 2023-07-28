@@ -7,9 +7,17 @@ const ProductCard = ({ product }) => {
     <div className="col-span-1">
       <Link href={`/products/${product.id}`} className="mx-auto">
         <div className="card rounded glass">
-          <div className="badge bg-red-500 border border-red-500 text-white py-3 absolute top-3 right-3">
-            {product.status}
-          </div>
+          {product.status === "In Stock" && (
+            <div className="badge bg-green-500 border border-green-500 text-white py-3 absolute top-3 right-3">
+              {product.status}
+            </div>
+          )}
+          {product.status === "Out of stock" && (
+            <div className="badge bg-red-500 border border-red-500 text-white py-3 absolute top-3 right-3">
+              {product.status}
+            </div>
+          )}
+
           <Image
             src={product.image}
             alt={product.image}
