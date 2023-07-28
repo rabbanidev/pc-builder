@@ -8,6 +8,7 @@ const CategoryItem = ({ categoryProducts }) => {
   const { query } = useRouter();
 
   const breadCrumbItems = [
+    { label: "Categories", value: "categories", isClick: true },
     { label: query.categoryTitle, value: query.categoryTitle, isClick: false },
   ];
 
