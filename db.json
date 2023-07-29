@@ -6,7 +6,7 @@
       "image": "https://images.pexels.com/photos/1432680/pexels-photo-1432680.jpeg",
       "category": "CPU - Processor",
       "price": 20000,
-      "status": "Out of stock",
+      "status": "In Stock",
       "rating": 4.8,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae.",
       "keyFeatures": {
@@ -157,6 +157,43 @@
       "category": "Monitor",
       "price": 20000,
       "status": "In Stock",
+      "rating": 4.7,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iusto voluptatibus voluptas, consequatur dolorum laborum ipsam quas.",
+      "keyFeatures": {
+        "brand": "Brand M",
+        "model": "Model XYZ",
+        "displaySize": "27 inches",
+        "resolution": "2560x1440",
+        "refreshRate": "144Hz",
+        "panelType": "IPS",
+        "responseTime": "1ms"
+      },
+      "individualRating": 4.5,
+      "averageRating": 4.7,
+      "reviews": [
+        {
+          "id": 1,
+          "username": "user123",
+          "rating": 4,
+          "comment": "Great color reproduction!",
+          "userProfile": "https://images.pexels.com/photos/5325105/pexels-photo-5325105.jpeg"
+        },
+        {
+          "id": 2,
+          "username": "user456",
+          "rating": 5,
+          "comment": "Excellent gaming monitor!",
+          "userProfile": "https://images.pexels.com/photos/5325105/pexels-photo-5325105.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Monitor HP 2222",
+      "image": "https://images.pexels.com/photos/159394/pc-computer-android-android-pc-159394.jpeg",
+      "category": "Monitor",
+      "price": 20000,
+      "status": "Out of stock",
       "rating": 4.7,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iusto voluptatibus voluptas, consequatur dolorum laborum ipsam quas.",
       "keyFeatures": {
