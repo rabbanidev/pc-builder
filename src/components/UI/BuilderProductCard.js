@@ -1,5 +1,6 @@
 import { addComponent } from "@/rtk/features/pcBuilder/pcBuilderSlice";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { AiFillStar } from "react-icons/ai";
 import { useDispatch } from "react-redux";
@@ -7,7 +8,7 @@ import { useDispatch } from "react-redux";
 const BuilderProductCard = ({ product }) => {
   const dispatch = useDispatch();
   const router = useRouter();
-  const { name, image, category, price, status, rating } = product || {};
+  const { id, name, image, category, price, status, rating } = product || {};
 
   const addComponentHandler = () => {
     dispatch(addComponent(product));
@@ -27,7 +28,9 @@ const BuilderProductCard = ({ product }) => {
       </div>
       <div className="col-span-1 md:col-span-6 md:ml-5">
         <div className="card-body p-0">
-          <h2 className="card-title">{name}</h2>
+          <Link href={`/products/${id}`} className="card-title hover:underline">
+            {name}
+          </Link>
           <p>
             <span className="font-semibold">Category: </span>
             {category}
