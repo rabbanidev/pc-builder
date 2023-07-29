@@ -1,8 +1,18 @@
+import { addComponent } from "@/rtk/features/pcBuilder/pcBuilderSlice";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { AiFillStar } from "react-icons/ai";
+import { useDispatch } from "react-redux";
 
 const BuilderProductCard = ({ product }) => {
-  const { id, name, image, category, price, status, rating } = product || {};
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const { name, image, category, price, status, rating } = product || {};
+
+  const addComponentHandler = () => {
+    dispatch(addComponent(product));
+    router.push("/pc-builder");
+  };
 
   return (
     <div className="px-5 py-5 grid grid-cols-1 gap-y-5 shadow md:grid-cols-12 md:gap-y-0">
@@ -50,6 +60,7 @@ const BuilderProductCard = ({ product }) => {
           type="button"
           className="block w-full mt-5 px-3 py-2 text-xs font-medium text-center text-white rounded bg-red-700 focus:outline-none md:py-3 md:w-32"
           disabled={status === "Out of stock"}
+          onClick={addComponentHandler}
         >
           Add To Builder
         </button>

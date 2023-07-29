@@ -2,11 +2,21 @@ import BreadCrumb from "@/components/UI/BreadCrumb";
 import BuilderCard from "@/components/UI/BuilderCard";
 import RootLayout from "@/components/layouts/RootLayout";
 import { categories } from "@/data/categories";
+import categorizeComponents from "@/utils/categorizeComponents";
+import matchedComponent from "@/utils/matchedComponent";
+import { useSelector } from "react-redux";
 
 const PcBuilder = () => {
+  const { pcComponents } = useSelector((state) => state.pcBuilder);
+
   const breadCrumbItems = [
     { label: "Pc Builder", value: "pc-builder", isClick: false },
   ];
+
+  const categorizedComponentsArray = categorizeComponents(
+    categories.map((category) => category.title),
+    pcComponents
+  );
 
   return (
     <section className="max-w-7xl mx-auto px-5 lg:px-10">
@@ -22,9 +32,16 @@ const PcBuilder = () => {
             <span className="text-[12px] lowercase">0 items</span>
           </div>
         </div>
-        <div className="mt-10">
+        <div className="mt-5">
           {categories.map((category) => (
-            <BuilderCard key={category.title} category={category} />
+            <BuilderCard
+              key={category.title}
+              category={category}
+              matchedComponents={matchedComponent(
+                categorizedComponentsArray,
+                category.title
+              )}
+            />
           ))}
         </div>
       </div>
