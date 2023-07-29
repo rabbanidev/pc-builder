@@ -43,7 +43,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const res = await fetch(
-    `http://localhost:3000/api/products?category=${params.categoryTitle}`
+    `${process.env.NEXT_PUBLIC_API_URL}/api/products?category=${params.categoryTitle}`
   );
   const data = await res.json();
 
