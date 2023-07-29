@@ -25,9 +25,8 @@ export const categories = [
     image:
       "https://images.pexels.com/photos/159394/pc-computer-android-android-pc-159394.jpeg",
   },
-  // {
-  //   title: "Others",
-  //   image:
-  //     "https://ov11-engine.flamingtext.com/netfu/tmp28002/coollogo_com-205321412.png",
-  // },
+  {
+    title: "Others",
+    image: "https://i.ibb.co/hDFsK5m/others.png",
+  },
 ];

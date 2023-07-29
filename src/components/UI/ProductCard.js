@@ -31,7 +31,7 @@ const ProductCard = ({ product }) => {
           <div className="card-body p-2">
             <h2 className="card-title">{product.name}</h2>
             <p className="flex">
-              <span className="font-semibold mr-1">Ratting: </span>
+              <span className="font-semibold mr-1">Rating: </span>
               <span className="flex items-center mr-1">
                 {product.rating}
                 <AiFillStar className="ml-1 text-orange-500" />
