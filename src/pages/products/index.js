@@ -26,12 +26,12 @@ Products.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/products");
+  const res = await fetch("http://localhost:3000/api/products");
   const products = await res.json();
 
   return {
     props: {
-      products,
+      products: products.data,
     },
     revalidate: 20,
   };

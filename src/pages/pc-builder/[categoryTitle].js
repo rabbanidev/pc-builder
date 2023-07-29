@@ -36,13 +36,13 @@ BuilderCategory.getLayout = function getLayout(page) {
 // SSR
 export const getServerSideProps = async ({ query }) => {
   const res = await fetch(
-    `http://localhost:5000/products?category=${query.categoryTitle}`
+    `http://localhost:3000/api//products?category=${query.categoryTitle}`
   );
   const data = await res.json();
 
   return {
     props: {
-      categoryProducts: data,
+      categoryProducts: data.data,
     },
   };
 };

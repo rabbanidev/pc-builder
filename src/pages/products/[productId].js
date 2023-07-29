@@ -24,7 +24,7 @@ const ProductDetails = ({ product }) => {
             width={300}
             height={300}
             layout="responsive"
-            className="w-full lg:h-auto h-64 object-cover object-center rounded"
+            className="w-full h-64 object-cover object-center rounded lg:max-h-[300px]"
           />
         </div>
         <div className="col-span-1">
@@ -179,10 +179,10 @@ ProductDetails.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http://localhost:5000/products");
+  const res = await fetch("http://localhost:3000/api/products");
   const products = await res.json();
 
-  const paths = products.map((product) => ({
+  const paths = products.data.map((product) => ({
     params: { productId: product.id },
   }));
 
@@ -193,12 +193,14 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const res = await fetch(`http://localhost:5000/products/${params.productId}`);
+  const res = await fetch(
+    `http://localhost:3000/api/products/${params.productId}`
+  );
   const data = await res.json();
 
   return {
     props: {
-      product: data,
+      product: data.data,
     },
     revalidate: 20,
   };
