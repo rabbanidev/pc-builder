@@ -3,6 +3,7 @@ import BuilderCard from "@/components/UI/BuilderCard";
 import RootLayout from "@/components/layouts/RootLayout";
 import { categories } from "@/data/categories";
 import categorizeComponents from "@/utils/categorizeComponents";
+import getTotalPrice from "@/utils/getTotalPrice";
 import matchedComponent from "@/utils/matchedComponent";
 import { useSelector } from "react-redux";
 
@@ -18,6 +19,8 @@ const PcBuilder = () => {
     pcComponents
   );
 
+  const totalPrice = getTotalPrice(pcComponents);
+
   return (
     <section className="max-w-7xl mx-auto px-5 lg:px-10">
       <BreadCrumb items={breadCrumbItems} />
@@ -28,8 +31,10 @@ const PcBuilder = () => {
             Your Own Computer
           </p>
           <div className="px-7 py-1 flex flex-col bg-yellow-600 text-white hover:bg-yellow-700 rounded cursor-none text-center">
-            <span>BDT: 0.00</span>
-            <span className="text-[12px] lowercase">0 items</span>
+            <span>BDT: {totalPrice.toFixed(2)}</span>
+            <span className="text-[12px] lowercase">
+              {Object.keys(pcComponents).length} items
+            </span>
           </div>
         </div>
         <div className="mt-5">
@@ -44,6 +49,15 @@ const PcBuilder = () => {
             />
           ))}
         </div>
+        {/* <div className="mt-10">
+          <button
+            type="button"
+            className="block w-full px-3 py-3 text-sm font-medium text-center text-black rounded border border-red-500 hover:bg-red-500 hover:text-white focus:outline-none"
+            disabled
+          >
+            Complete Build
+          </button>
+        </div> */}
       </div>
     </section>
   );

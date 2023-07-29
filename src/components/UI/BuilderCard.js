@@ -12,7 +12,7 @@ const BuilderCard = ({ category, matchedComponents }) => {
   };
 
   return (
-    <div className="flex justify-between items-center border-b py-3 last:border-b-0">
+    <div className="flex justify-between items-center border-b py-3 last:border-b-0 last:pb-0">
       <div className="flex gap-x-2 md:gap-x-4">
         <Image
           width={60}
