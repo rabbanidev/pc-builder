@@ -18,9 +18,13 @@ const pcBuilderSlice = createSlice({
       const { [action.payload]: _, ...newComponents } = state.pcComponents;
       state.pcComponents = newComponents;
     },
+    emptyComponents: (state) => {
+      state.pcComponents = {};
+    },
   },
 });
 
-export const { addComponent, deleteComponent } = pcBuilderSlice.actions;
+export const { addComponent, deleteComponent, emptyComponents } =
+  pcBuilderSlice.actions;
 
 export default pcBuilderSlice.reducer;

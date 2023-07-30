@@ -2,12 +2,15 @@ import BreadCrumb from "@/components/UI/BreadCrumb";
 import BuilderCard from "@/components/UI/BuilderCard";
 import RootLayout from "@/components/layouts/RootLayout";
 import { categories } from "@/data/categories";
+import { emptyComponents } from "@/rtk/features/pcBuilder/pcBuilderSlice";
 import categorizeComponents from "@/utils/categorizeComponents";
 import getTotalPrice from "@/utils/getTotalPrice";
 import matchedComponent from "@/utils/matchedComponent";
-import { useSelector } from "react-redux";
+import { toast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
 
 const PcBuilder = () => {
+  const dispatch = useDispatch();
   const { pcComponents } = useSelector((state) => state.pcBuilder);
 
   const breadCrumbItems = [
@@ -20,6 +23,11 @@ const PcBuilder = () => {
   );
 
   const totalPrice = getTotalPrice(pcComponents);
+
+  const completeButtonHandler = () => {
+    dispatch(emptyComponents());
+    toast.success("Congratulations, Your pc buliding configuration done!");
+  };
 
   return (
     <section className="max-w-7xl mx-auto px-5 lg:px-10">
@@ -49,15 +57,16 @@ const PcBuilder = () => {
             />
           ))}
         </div>
-        {/* <div className="mt-10">
+        <div className="mt-10">
           <button
             type="button"
             className="block w-full px-3 py-3 text-sm font-medium text-center text-black rounded border border-red-500 hover:bg-red-500 hover:text-white focus:outline-none"
-            disabled
+            disabled={Object.keys(pcComponents).length < 6}
+            onClick={completeButtonHandler}
           >
             Complete Build
           </button>
-        </div> */}
+        </div>
       </div>
     </section>
   );
