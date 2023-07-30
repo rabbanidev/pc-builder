@@ -1,5 +1,6 @@
 import Product from "@/model/products";
 import dbConnect from "@/utils/dbConnected";
+import randomProducts from "@/utils/randomProducts";
 
 dbConnect();
 
@@ -9,8 +10,12 @@ const randomProductsHandler = async (req, res) => {
   switch (method) {
     case "GET":
       try {
-        const products = await Product.find({}).limit(6);
-        return res.status(400).json({ status: "success", data: products });
+        const products = await Product.find({});
+        const uniqueProducts = randomProducts(products);
+
+        return res
+          .status(400)
+          .json({ status: "success", data: uniqueProducts });
       } catch (error) {
         return res
           .status(500)
