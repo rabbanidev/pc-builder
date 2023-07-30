@@ -178,6 +178,13 @@ ProductDetails.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
+  // if (typeof window === "undefined") {
+  //   return {
+  //     paths: [],
+  //     fallback: false,
+  //   };
+  // }
+
   const res = await fetch(`${process.env.CLIENT_URL}/api/products`);
   const products = await res.json();
 
@@ -192,6 +199,14 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
+  // if (typeof window === "undefined") {
+  //   return {
+  //     props: {
+  //       product: {},
+  //     },
+  //   };
+  // }
+
   const res = await fetch(
     `${process.env.CLIENT_URL}/api/products/${params.productId}`
   );

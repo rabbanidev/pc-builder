@@ -42,6 +42,14 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
+  // if (typeof window === "undefined") {
+  //   return {
+  //     props: {
+  //       categoryProducts: [],
+  //     },
+  //   };
+  // }
+
   const res = await fetch(
     `${process.env.CLIENT_URL}/api/products?category=${params.categoryTitle}`
   );
