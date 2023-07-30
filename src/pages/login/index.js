@@ -13,15 +13,15 @@ const Login = () => {
 
   const githubSigninHandler = () => {
     signIn("github", {
-      callbackUrl: router.query?.callbackUrl || "http://localhost:3000",
-      // redirect: false,
+      callbackUrl: router.query?.callbackUrl || process.env.CLIENT_URL,
+      redirect: false,
     });
   };
 
   const googleSigninHandler = () => {
     signIn("google", {
-      callbackUrl: router.query?.callbackUrl || "http://localhost:3000",
-      // redirect: false,
+      callbackUrl: router.query?.callbackUrl || process.env.CLIENT_URL,
+      redirect: false,
     });
   };
 
