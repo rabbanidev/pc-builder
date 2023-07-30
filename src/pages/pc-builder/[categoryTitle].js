@@ -36,7 +36,7 @@ BuilderCategory.getLayout = function getLayout(page) {
 // SSR
 export const getServerSideProps = async ({ query }) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/products?category=${query.categoryTitle}`
+    `${process.env.CLIENT_URL}/api/products?category=${query.categoryTitle}`
   );
   const data = await res.json();
 

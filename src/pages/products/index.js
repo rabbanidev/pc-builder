@@ -26,7 +26,7 @@ Products.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`);
+  const res = await fetch(`${process.env.CLIENT_URL}/api/products`);
   const products = await res.json();
 
   return {

@@ -1,8 +1,15 @@
 import { categories } from "@/data/categories";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 
 const Navbar = () => {
+  const { data: session } = useSession();
+
+  const logoutHandler = () => {
+    signOut();
+  };
+
   return (
     <div className="max-w-7xl mx-auto">
       <div className="navbar shadow px-5 text-black lg:px-10">
@@ -97,27 +104,48 @@ const Navbar = () => {
                 >
                   PC Builder
                 </Link>
-                <Link
-                  href="/login"
-                  className="block w-full rounded bg-rose-600 px-12 text-center py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500"
-                >
-                  Signin
-                </Link>
+                {session?.user ? (
+                  <button
+                    className="block w-full rounded bg-rose-600 px-12 text-center py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500"
+                    onClick={logoutHandler}
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <Link
+                    href="/login"
+                    className="block w-full rounded bg-rose-600 px-12 text-center py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500"
+                  >
+                    Signin
+                  </Link>
+                )}
               </div>
             </div>
           </div>
         </div>
+
         <div className="hidden md:flex md:navbar-end">
-          <Link href="/pc-builder">
-            <button className="py-2 px-3 rounded bg-red-500 text-white hover:bg-red-600">
-              PC Builder
-            </button>
+          <Link
+            href="/pc-builder"
+            className="py-2 px-3 rounded bg-red-500 text-white hover:bg-red-600"
+          >
+            PC Builder
           </Link>
-          <Link href="/login">
-            <button className="ml-2 py-2 px-6 rounded bg-red-500 text-white hover:bg-red-600">
+          {session?.user ? (
+            <button
+              className="ml-2 py-2 px-6 rounded bg-red-500 text-white hover:bg-red-600"
+              onClick={logoutHandler}
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              className="ml-2 py-2 px-6 rounded bg-red-500 text-white hover:bg-red-600"
+            >
               Signin
-            </button>
-          </Link>
+            </Link>
+          )}
         </div>
       </div>
     </div>
